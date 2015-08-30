@@ -3,5 +3,5 @@
     Descrição: Estudo dos operadores javascript
 */
 
-var x = (7 - 4 + 3) * 2;
+var x = + "-2";
 alert(x);
