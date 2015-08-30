@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript Aula 05</title>
+		<style type="text/css">
+			body {
+				background-color: #000;
+			}
+			#xti {
+				display: block; margin: 20px auto;
+			}
+		</style>
+ 		<script type="text/javascript">
+			function ligar() {
+				var aspas = "What's\n\u7231"; //String
+				
+				alert(aspas);
+				document.getElementById("xti").src = "img/lampada_ligada.png";
+			}
+		</script>
+	</head>
+	<body>
+		<img id="xti" onclick="ligar();" 
+		src="img/lampada_desligada.png" />
+	</body>
+</html>
