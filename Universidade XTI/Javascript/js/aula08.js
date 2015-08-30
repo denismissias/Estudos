@@ -3,7 +3,7 @@
     Descrição: Estudo dos operadores javascript
 */
 
-var x = 9 + 4;
+var x = (7 - 4 + 3) * 2;
 alert(x);
 
 alert(2 + 3); //binário
