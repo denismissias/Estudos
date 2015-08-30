@@ -4,4 +4,7 @@
 */
 
 var x = 6
-alert();
+alert(x === "6");
+
+//== Compara somente valor
+//=== Compara valor e tipo
