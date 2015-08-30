@@ -1,3 +1,8 @@
+/*
+    Função: ligar();
+    Autor: Denis de Sousa Missias
+    Descrição: Apresenta o nome do usuário e liga a lâmpada
+*/
 function ligar() {
     var aspas = "What's\n\u7231"; //String
     var nome; //undefined
