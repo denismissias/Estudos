@@ -5,5 +5,23 @@
         <script type="text/javascript" src="js/Aula14.js"></script>
     </head>
     <body>
+        <form id="formulario">
+            <fieldset>
+                <legend>Cálculo do IMC</legend>
+                <label for="kilos">Kilos: </label>
+                <input type="text" name="kilos" />
+                
+                <label for="metros">Metros: </label>
+                <input type="text" name="metros" />
+                
+                <label for="centimetros">Cm: </label>
+                <input type="text" name="centimetros" />
+                
+                <label for="imc">IMC: </label>
+                <input type="text" name="imc" disabled="disabled" />
+                
+                <a href="#" onclick="calcularIMC();">Calcular</a>
+            </fieldset>
+        </form>
     </body>
 </html>
