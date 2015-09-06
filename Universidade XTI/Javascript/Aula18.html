@@ -23,6 +23,9 @@
                 border: 1px solid #ccc;
                 font-size: : 0.8em;
             }
+            a {
+                display: block;
+            }
         </style>
     </head>
     <body>
@@ -40,6 +43,8 @@
                 
                 <label for="imc">IMC: </label>
                 <input type="text" name="imc" disabled="disabled" />
+                
+                <span id="spnMensagem"></span>
                 
                 <a href="#" onclick="calcularIMC();">Calcular</a>
             </fieldset>

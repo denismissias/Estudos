@@ -10,18 +10,18 @@ function calcularIMC() {
     formulario.imc.value = imc.toFixed(2);
     
     if (imc < 20) {
-        alert("Abaixo do Peso");
+        spnMensagem.textContent = "Abaixo do Peso";
     } else if (imc > 20 && imc <= 25) {
-        alert("Peso Ideal");
+        spnMensagem.textContent = "Peso Ideal";
     } else if (imc > 25 && imc <= 30) {
-        alert("Sobrepeso");
+        spnMensagem.textContent = "Sobrepeso";
     } else if (imc > 30 && imc <= 35) {
-        alert("Obesidade Moderada");
+        spnMensagem.textContent = "Obesidade Moderada";
     } else if (imc > 35 && imc <= 40) {
-        alert("Obesidade Severa");
+        spnMensagem.textContent = "Obesidade Severa";
     } else if (imc > 40 && imc <= 50) {
-        alert("Obesidade Mórbida");
+        spnMensagem.textContent = "Obesidade Mórbida";
     } else {
-        alert("Super Obesidade");
+        spnMensagem.textContent = "Super Obesidade";
     }
 }
