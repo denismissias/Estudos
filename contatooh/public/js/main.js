@@ -1,4 +1,4 @@
-var app = angular.module('contatooh', ['ngRoute']).config(function ($routeProvider) {
+var app = angular.module('contatooh', ['ngRoute', 'ngResource']).config(function ($routeProvider) {
 	$routeProvider.when('/contatos', {
 		templateUrl: 'partials/contatos.html',
 		controller: 'contatosController'

@@ -1,28 +1,46 @@
-app.controller('contatosController', function ($scope) {
-	$scope.total = 0;
+app.controller('contatosController', function ($scope, $resource) {
 	
-	$scope.incrementa = function () {
-		$scope.total++;
-	};
-	
-	$scope.contatos = 
-	[
-		{
-			"_id": 1,
-			"nome": "Contato Angular 1",
-			"email": "cont1@empresa.com.br"
-		},
-		{
-			"_id": 2,
-			"nome": "Contato Angular 2",
-			"email": "cont2@empresa.com.br"
-		},
-		{
-			"_id": 3,
-			"nome": "Contato Angular 3",
-			"email": "cont3@empresa.com.br"
-		}
-	];
+	$scope.contatos = [];
 	
 	$scope.filtro = '';
+	
+	$scope.mensagem = {texto: ''};
+	
+	// Acesso ao server via http
+	// $http.get('/contatos').success(function (data) {
+		// $scope.contatos = data;
+	// }).error(function (statusText) {
+		// console.log("Não foi possível obter a lista de contatos");
+		// console.log(statusText);
+	// });
+	
+	// Acesso ao server via "resource"
+	var Contato = $resource('/contatos/:id');
+	
+	function buscaContatos() {
+		Contato.query(function (contatos) {
+			$scope.contatos = contatos;
+			$scope.mensagem = {};
+		},
+		function (erro) {
+			$scope.mensagem = {
+				texto: "Não foi possível obter a lista de contatos"
+			};
+			console.log(erro);
+		});
+	}
+	buscaContatos();
+	
+	$scope.remove = function (contato) {
+		Contato.delete({
+			id: contato._id
+		},
+		buscaContatos,
+		function (erro) {
+			$scope.mensagem = {
+				texto: "Não foi possível remover o contato"
+			};
+			console.log(erro);
+		});
+	};
 });
