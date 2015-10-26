@@ -4,6 +4,11 @@ var app = angular.module('contatooh', ['ngRoute', 'ngResource']).config(function
 		controller: 'contatosController'
 	});
 	
+	$routeProvider.when('/contato', {
+		templateUrl: 'partials/contato.html',
+		controller: 'contatoController'
+	});
+	
 	$routeProvider.when('/contato/:contatoId', {
 		templateUrl: 'partials/contato.html',
 		controller: 'contatoController'
