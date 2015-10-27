@@ -1,5 +1,7 @@
-app.controller('contatoController', function ($scope, $routeParams, $resource) {
-	var Contato = $resource('/contatos/:id');
+app.controller('contatoController', function ($scope, $routeParams, Contato) {
+	$scope.mensagem = {texto: ''};
+	
+	//var Contato = $resource('/contatos/:id'); -- Substituído por Service
 	
 	if($routeParams.contatoId) {
 		Contato.get({
@@ -15,6 +17,19 @@ app.controller('contatoController', function ($scope, $routeParams, $resource) {
 			console.log(erro);
 		});
 	} else {
-		$scope.contato = {};
+		$scope.contato = new Contato();
 	}
+	
+	$scope.salva = function() {
+		$scope.contato.$save().then(function() {
+			$scope.mensagem = {
+				texto: 'Salvo com sucesso'
+			};
+			$scope.contato = new Contato();
+		}).catch(function(erro) {
+			$scope.mensagem = {
+				texto: 'Não foi possível salvar'
+			};
+		});
+	};
 });
