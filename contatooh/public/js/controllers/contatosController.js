@@ -1,4 +1,4 @@
-app.controller('contatosController', function ($scope, $resource) {
+app.controller('contatosController', function ($scope, Contato) {
 	
 	$scope.contatos = [];
 	
@@ -15,7 +15,7 @@ app.controller('contatosController', function ($scope, $resource) {
 	// });
 	
 	// Acesso ao server via "resource"
-	var Contato = $resource('/contatos/:id');
+	//var Contato = $resource('/contatos/:id'); -- Substituído por Service
 	
 	function buscaContatos() {
 		Contato.query(function (contatos) {
