@@ -1,17 +1,19 @@
 'use strict';
 
 var express = require('express');
-var routes = require('./routes');
+var load = require('express-load');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', __dirname + '/views');
 
-app.get('/', routes.index);
-app.get('/usuarios', routes.user.index);
+load('models')
+.then('controllers')
+.then('routes')
+.into(app);
 
 app.listen(3000, function () {
     console.log("Ntalk no ar");
