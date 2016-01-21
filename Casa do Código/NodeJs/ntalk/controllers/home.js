@@ -5,11 +5,12 @@ module.exports = function (app) {
         },
         
         login: function (req, res) {
-            var email = req.body.usuario.email;
-            var nome = req.body.usuario.nome;
+            
+            var email = req.body.email;
+            var nome = req.body.nome;
             
             if(email && nome) {
-                var usuario = req.body.usuario;
+                var usuario = req.body;
                 usuario['contatos'] = [];
                 req.session.usuario = usuario;
                 res.redirect('/contatos');
