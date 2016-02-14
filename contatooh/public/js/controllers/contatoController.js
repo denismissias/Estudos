@@ -32,4 +32,8 @@ app.controller('contatoController', function ($scope, $routeParams, Contato) {
 			};
 		});
 	};
+	
+	Contato.query(function(contatos) {
+		$scope.contatos = contatos;
+	});
 });
