@@ -36,5 +36,6 @@ public class TestandoEstruturaPrograma {
         System.out.println("Teste: " + teste);
         System.out.println("Resultado: " + resultado);
         System.out.println(endMemoria);
+        System.out.println(salario * 0.085);
     }
 }
