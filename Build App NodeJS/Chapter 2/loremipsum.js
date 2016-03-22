@@ -1,6 +1,6 @@
 var http = require('http');
 
-http.get('http://loripsumerro.net/api/1', function(res) {
+http.get('http://loripsum.net/api/1', function(res) {
 	var text = '';
 
 	res.on('data', function (chunk) {
