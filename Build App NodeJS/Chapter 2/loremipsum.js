@@ -7,7 +7,7 @@
  * 
  * Denis Missias, Março de 2016 
 */
-
+var debug = require('debug')('loremipsumjs');
 var http = require('http');
 var fs = require('fs');
 var fileName = String(process.argv[2] || '').replace(/[^a-z0-9\.]/gi, '');
@@ -24,6 +24,7 @@ http.get('http://loripsum.net/api/' + quantityOfParagraphs, function(res) {
 
 	res.on('data', function (chunk) {
 		text += chunk;
+        debug(text);
 	});
 
 	res.on('end', function () {
