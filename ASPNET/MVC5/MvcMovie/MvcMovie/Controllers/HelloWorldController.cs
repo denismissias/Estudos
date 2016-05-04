@@ -10,16 +10,24 @@ namespace MvcMovie.Controllers
     {
         //
         // GET: /HelloWorld/
-        public String Index()
+        public ActionResult Index()
         {
-            return "This is my <b>default</b> action...";
+            return View();
         }
 
         //
         // GET: /HelloWorld/Welcome/
-        public String Welcome(String name, Int16 ID = 1)
+        //public String Welcome(String name, Int16 ID = 1)
+        //{
+        //    return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+        //}
+
+        public ActionResult Welcome(String name, Int32 numTimes = 1)
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
 	}
 }
